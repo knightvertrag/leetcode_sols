@@ -58,7 +58,7 @@ wrong_answer_file = "wrong_answer_code_link.txt"
 tle_file = "tle_code_link.txt"
 runtime_error_file = "runtime_error_code_link.txt"
 compile_error_file = "compile_error_code_link.txt"
-all_file_list = [accepted_file, wrong_answer_file, tle_file, runtime_error_file, compile_error_file]
+all_file_list = [accepted_file]
 
 accepted_dir = os.path.join(code, "accepted_codes")
 wrong_answer_dir = os.path.join(code, "wrong_answer_codes")
@@ -509,7 +509,8 @@ while(True):
 			with open(os.path.join(code_links, accepted_file),'a') as f:
 				f.writelines(submission_link)
 				f.writelines("\n")
-				time.sleep(0.01)
+				time.sleep(0.03)
+	break
 		# elif status == "Wrong Answer":
 		# 	with open(os.path.join(code_links, wrong_answer_file),'a') as f:
 		# 		f.writelines(submission_link)
@@ -551,7 +552,7 @@ print()
 def remove_invalid(que_name,invd):
     return que_name.replace(invd, "")
 
-print("Downloading your codes...")
+print("Downloading your code...")
 for i in range(len(all_file_list)):
 	file_name = all_file_list[i]
 	file_dir = all_file_dir[i]
